@@ -15,16 +15,21 @@ export class JobsService {
     }
 
     all(): Observable<JobsResponse> {
-        let url = this.getApi().baseApi + 'users?a=1';
+        let url = this.getApi().baseApi + 'jobs?a=1';
         return this.http.get<JobsResponse>(url)
     }
 }
 
 export class JobsResponse {
-    data: Job[]
+    jobs: Job[]
 }
 
 export class Job {
     id: number
-    avatar: string
+    opearion: string
+    phone: string
+    status: number
+    json: string
+    dateStart: string
+    dateChange: string
 }
